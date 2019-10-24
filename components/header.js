@@ -24,10 +24,11 @@ export default class CustomHeader extends React.Component {
     }
 
     render() {
+        nav = this.props.navigation;
         return(
             <Header 
                 centerComponent = { <MenuTitle title = { this.props.title } /> }
-                rightComponent = { <MenuButton navigation={ this.props.navigation } /> }
+                rightComponent = { <MenuButton navigation={ nav } /> }
             />
         )
 
