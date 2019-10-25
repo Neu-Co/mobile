@@ -1,4 +1,5 @@
 import React from 'react';
+import Store from './store/store';
 
 // NAVIGATIONS
 import SwitchNavigator from './navigation/switchNavigator';
@@ -6,9 +7,12 @@ import SwitchNavigator from './navigation/switchNavigator';
 export default function App() {
 
   return (
-    <SwitchNavigator />
+    <Provider store={Store}>
+      <SwitchNavigator />
+    </Provider>
   );
 
 
 }
+
 
