@@ -2,8 +2,9 @@ import React from 'react';
 import { View, Text } from 'react-native';
 
 import { connect } from 'react-redux';
+import { setUser } from '../actions/user';
 
-// COMPONENTS
+// Components
 import CustomHeader from '../components/header';
 
 export class LoginScreen extends React.Component {
@@ -23,10 +24,6 @@ export class LoginScreen extends React.Component {
         )
     }
 }
-
-
-
-
 
 /*-------- Redux --------*/
 
