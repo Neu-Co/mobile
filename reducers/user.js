@@ -1,20 +1,13 @@
-const initialState = { user: null };
+import * as actionTypes from '../actions/types';
+
+const initialState = {};
 
 export default function user(state = initialState, action) {
-    let nextState;
     switch(action.type) {
-        case 'SET_USER':
-                nextState = {
-                    ...state,
-                    user: action.user
-                }
-                return nextState;
-        case 'DEL_USER':
-                nextState = {
-                    ...state,
-                    user: undefined
-                }
-                return nextState;
+        case (actionTypes.SET_USER):
+            return { ...state, ...action.user }
+        case (actionTypes.DEL_USER):
+            return { ...state, user: null }
     default:
         return state;
     }
