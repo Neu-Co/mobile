@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 
 import { connect } from 'react-redux';
-import { setUser } from '../actions/user';
+import { loginUser } from '../actions/auth';
 
 // Components
 import CustomHeader from '../components/header';
@@ -11,6 +11,15 @@ export class LoginScreen extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            isLoading: false,
+            username: '',
+            password: ''
+        }
+    }
+
+    handleSubmit = () => {
+
     }
 
     render() {
@@ -34,7 +43,7 @@ const mapStateToProps = (state) => {
   }
 
 const mapDispatchToProps = dispatch => ({
-    setUser: (...args) => dispatch(setUser(...args)),
+    loginUser: (...args) => dispatch(loginUser(...args)),
 });
 
 // Connect to the Store redux
