@@ -1,14 +1,29 @@
 import { createSwitchNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-// NAVIGATORS
-import DrawerNavigator from './drawerNavigator';
+// Screens
+import LoginScreen from '../screens/loginScreen';
+import LoadingScreen from '../screens/loadingScreen';
+
+// Navigator
+import BottomNavigator from './bottomNavigator';
+
+const AuthStack = createStackNavigator(
+    { 
+        login: LoginScreen
+    },
+    {
+        headerMode: 'none'
+    });
 
 const SwitchNavigator = createSwitchNavigator(
     {
-        App: DrawerNavigator
+        Auth: AuthStack,
+        App: BottomNavigator,
+        AuthLoading: LoadingScreen
     },
     {
-        initialRouteName: 'App'
+        initialRouteName: 'Auth'
     }
 )
 
