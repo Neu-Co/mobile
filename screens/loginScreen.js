@@ -25,7 +25,8 @@ export class LoginScreen extends React.Component {
         const { username, password } = this.state;
         this.setState({ isLoading: true}, async () => {
             const success = await this.props.loginUser(username, password);
-            if(success) alert('success!');
+            if(success) this.props.navigation.navigate('App');
+            else alert('Bad Credentials');
         })
     }
 
