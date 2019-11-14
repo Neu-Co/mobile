@@ -54,6 +54,7 @@ export default class ProfileScreen extends React.Component {
               />
             }
           />
+          {/* modify style button in stylshit */}
           <View
             style={{
               marginTop: 20,
