@@ -62,7 +62,7 @@ export default class ProfileScreen extends React.Component {
           >
             <Text>
               Actuellement crevé sur la route qui mene a la plaine de gaiac,
-              pour aller peter un coup de chasse, je me suis arrrter pour boire
+              pour aller peter un coup de chasse, je me suis arrèter pour boire
               un coup de sky.
             </Text>
           </View>
@@ -78,7 +78,7 @@ export default class ProfileScreen extends React.Component {
                 borderTopRightRadius: 3
               }}
             ><MaterialCommunityIcons name='star' size={20} type='material'/>
-              Button1
+              Reviews
             </Text>
           </TouchableOpacity>
           <TouchableOpacity style={{ width: 350 }}>
@@ -90,7 +90,7 @@ export default class ProfileScreen extends React.Component {
                 borderWidth: 0.5
               }}
             ><FontAwesome name='plane' size={20} type='material'/>
-              Button1
+              Mes annonces
             </Text>
           </TouchableOpacity>
           <TouchableOpacity style={{ width: 350 }}>
@@ -104,7 +104,7 @@ export default class ProfileScreen extends React.Component {
                 borderBottomRightRadius: 3
               }}
             ><FontAwesome name='gears' size={20} type='material'/>
-              Button1
+              Réglages
             </Text>
           </TouchableOpacity>
         </View>
@@ -118,7 +118,8 @@ export default class ProfileScreen extends React.Component {
                 borderWidth: 0.5,
                 borderRadius: 3
               }}
-            ><MaterialCommunityIcons name='export' size={20} type='material'/>
+            >
+            <MaterialCommunityIcons name='export' size={20} type='material'/>
               Déconnexion
             </Text>
           </TouchableOpacity>
