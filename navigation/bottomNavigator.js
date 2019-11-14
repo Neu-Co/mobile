@@ -3,12 +3,12 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 // SCREENS
 import HomeScreen from '../screens/homeScreen';
-import LoginScreen from '../screens/loginScreen';
+import ProfileScreen from '../screens/profileScreen';
 
 const BottomNavigator = createBottomTabNavigator(
     {
+        profile: ProfileScreen,
         Home: HomeScreen,
-        Login: LoginScreen,
     },
     {
         headerMode: 'screen'

@@ -8,6 +8,7 @@ import LoadingScreen from '../screens/loadingScreen';
 // Navigator
 import BottomNavigator from './bottomNavigator';
 
+
 const AuthStack = createStackNavigator(
     { 
         login: LoginScreen
@@ -23,7 +24,7 @@ const SwitchNavigator = createSwitchNavigator(
         AuthLoading: LoadingScreen
     },
     {
-        initialRouteName: 'Auth'
+        initialRouteName: 'App'
     }
 )
 
