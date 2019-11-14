@@ -4,6 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 // Screens
 import LoginScreen from '../screens/loginScreen';
 import LoadingScreen from '../screens/loadingScreen';
+import RegisterScreen from '../screens/registerScreen';
 
 // Navigator
 import BottomNavigator from './bottomNavigator';
@@ -11,6 +12,7 @@ import BottomNavigator from './bottomNavigator';
 
 const AuthStack = createStackNavigator(
     { 
+        register: RegisterScreen,
         login: LoginScreen
     },
     {
@@ -24,7 +26,7 @@ const SwitchNavigator = createSwitchNavigator(
         AuthLoading: LoadingScreen
     },
     {
-        initialRouteName: 'App'
+        initialRouteName: 'Auth'
     }
 )
 
