@@ -14,13 +14,12 @@ export const getToken = () => async dispatch => {
 
 export const setToken = token => async dispatch => {
   try {
-    await AsyncStorage.setItem('@token', token);
+    await AsyncStorage.setItem('@token', JSON.stringify(token));
     dispatch({ type: actionTypes.SET_TOKEN, token });
     return true;
   } catch (error) {
     console.log(error);
   }
-  
 }
 
 export const removeToken = () => async dispatch => {

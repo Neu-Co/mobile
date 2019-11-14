@@ -1,10 +1,12 @@
 import { login } from '../services/auth.service';
+import { setToken } from './token';
 
 export const loginUser = (username, password) => async dispatch => {
     try {
         const response = await login(username, password);
-        console.log(response)
-        if(response) return true;
+        const token = response.success ? response.success.token : false;
+        await dispatch(setToken(token));
+        if(!response.error && token ) return true;
     } catch (error) {
         console.log(error);
     }
