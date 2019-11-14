@@ -5,7 +5,7 @@ export const loginUser = (username, password) => async dispatch => {
     try {
         const response = await login(username, password);
         const token = response.success ? response.success.token : false;
-        dispatch(setToken(token));
+        await dispatch(setToken(token));
         if(!response.error && token ) return true;
     } catch (error) {
         console.log(error);

@@ -1,8 +1,6 @@
 import * as actionTypes from '../actions/types';
 
-const initialState = {
-  user: null,
-};
+const initialState = {};
 
 export default function token(state = initialState, action) {
   switch (action.type) {
@@ -11,7 +9,7 @@ export default function token(state = initialState, action) {
     case actionTypes.SET_TOKEN:
       return { ...state, userToken: action.token };
     case actionTypes.DEL_TOKEN:
-      return { ...state };
+      return { ...state, userToken: null };
     default:
       return state;
   }

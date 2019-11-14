@@ -5,7 +5,9 @@ import { Ionicons } from '@expo/vector-icons';
 // COMPONENTS
 import CustomHeader from '../components/header';
 
-export default class HomeScreen extends React.Component {
+import { connect } from 'react-redux';
+
+export class HomeScreen extends React.Component {
 
     static navigationOptions = {
         title: 'Home',
@@ -23,6 +25,7 @@ export default class HomeScreen extends React.Component {
     }
 
     render() {
+        console.log(this.props);
         return(
             <View>
                 <CustomHeader navigation={ this.props.navigation } title="Home" />
@@ -33,6 +36,14 @@ export default class HomeScreen extends React.Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        token: state.token
+    }
+  }
+
+export default connect(mapStateToProps)(HomeScreen);
 
 const styles = StyleSheet.create({
     container: {
