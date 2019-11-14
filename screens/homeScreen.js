@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableHighlight, ImageBackground } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 // COMPONENTS
 import CustomHeader from '../components/header';
 
 import { connect } from 'react-redux';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export class HomeScreen extends React.Component {
 
@@ -34,12 +35,12 @@ export class HomeScreen extends React.Component {
                     style={{ width: '100%', height: '100%'}}>
                     <Text style={styles.title}>Et vous quelle est votre prochaine destination ?</Text>
                     <Text style={styles.text}>Le covoiturage Calédonien c'est maintenant : Choisissez le trajet qui vous convient le mieux.</Text>
-                    <TouchableHighlight style={styles.btnProp}>
+                    <TouchableOpacity style={styles.btnProp}>
                         <Text style={styles.btnTextProp}>Proposer un trajet</Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.btnSearch}>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.btnSearch}>
                         <Text style={styles.btnTextSearch}>Rechercher un trajet</Text>
-                    </TouchableHighlight>
+                    </TouchableOpacity>
                 </ImageBackground>
             </View>
         )

@@ -3,12 +3,14 @@ import {
   View,
   Text,
   StyleSheet,
-  StatusBar,
   TouchableOpacity
 } from "react-native";
-import { Avatar, Button, Card } from "react-native-elements";
+import { Avatar} from "react-native-elements";
 import Stars from "react-native-stars";
-import { FontAwesome, MaterialCommunityIcons } from "react-native-vector-icons";
+import {
+  FontAwesome,
+  MaterialCommunityIcons
+} from "react-native-vector-icons";
 
 // Components
 import CustomHeader from "../components/header";
@@ -66,61 +68,30 @@ export default class ProfileScreen extends React.Component {
               un coup de sky.
             </Text>
           </View>
-
-          <TouchableOpacity style={{ width: 350 }}>
-            <Text
-              style={{
-                backgroundColor: "lightblue",
-                paddingBottom: 10,
-                paddingTop: 10,
-                borderWidth: 0.5,
-                borderTopLeftRadius: 3,
-                borderTopRightRadius: 3
-              }}
-            ><MaterialCommunityIcons name='star' size={20} type='material'/>
+          <TouchableOpacity style={ styles.buttonReview }>
+            <Text style={styles.textCenter}>
+              <MaterialCommunityIcons name="star" size={20} type="material" />
               Reviews
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{ width: 350 }}>
-            <Text
-              style={{
-                backgroundColor: "lightblue",
-                paddingBottom: 10,
-                paddingTop: 10,
-                borderWidth: 0.5
-              }}
-            ><FontAwesome name='plane' size={20} type='material'/>
-              Mes annonces
+          <TouchableOpacity style={ styles.buttonTrip }>
+            <Text style={styles.textCenter}>
+              <FontAwesome name="send" size={20} type="material" />
+                Mes annonces
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{ width: 350 }}>
-            <Text
-              style={{
-                backgroundColor: "lightblue",
-                paddingBottom: 10,
-                paddingTop: 10,
-                borderWidth: 0.5,
-                borderBottomLeftRadius: 3,
-                borderBottomRightRadius: 3
-              }}
-            ><FontAwesome name='gears' size={20} type='material'/>
-              Réglages
+          <TouchableOpacity style={ styles.buttonSetting }>
+            <Text style={styles.textCenter}>
+              <FontAwesome name="gears" size={20} type="material" />
+                Réglages
             </Text>
           </TouchableOpacity>
         </View>
-        <View style={{ marginLeft: 30 }}>
-          <TouchableOpacity style={{ width: 350, marginBottom: 20 }}>
-            <Text
-              style={{
-                backgroundColor: "orange",
-                paddingBottom: 10,
-                paddingTop: 10,
-                borderWidth: 0.5,
-                borderRadius: 3
-              }}
-            >
-            <MaterialCommunityIcons name='export' size={20} type='material'/>
-              Déconnexion
+        <View>
+          <TouchableOpacity style={ styles.buttonLogout }>
+            <Text style={styles.textCenter}>
+              <MaterialCommunityIcons name="export" size={20} type="material" />
+                Déconnexion
             </Text>
           </TouchableOpacity>
         </View>
@@ -143,5 +114,46 @@ const styles = StyleSheet.create({
   },
   myEmptyStarStyle: {
     color: "gold"
+  },
+  buttonReview: {
+    width: 350,
+    backgroundColor: "lightblue",
+    paddingBottom: 10,
+    paddingTop: 10,
+    borderWidth: 0.5,
+    borderBottomWidth: 0,
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5
+  },
+  buttonTrip: {
+    width: 350,
+    backgroundColor: "lightblue",
+    paddingBottom: 10,
+    paddingTop: 10,
+    borderWidth: 0.5,
+    borderBottomWidth: 0
+  },
+  buttonSetting: {
+    width: 350,
+    backgroundColor: "lightblue",
+    paddingBottom: 10,
+    paddingTop: 10,
+    borderWidth: 0.5,
+    borderBottomLeftRadius: 5,
+    borderBottomRightRadius: 5
+  },
+  buttonLogout: {
+    width: 350,
+    backgroundColor: "orange",
+    paddingBottom: 10,
+    paddingTop: 10,
+    marginRight: 30,
+    marginBottom: 40,
+    marginLeft: 30,
+    borderWidth: 0.5,
+    borderRadius:5
+  },
+  textCenter:{
+    paddingLeft:10
   }
 });
