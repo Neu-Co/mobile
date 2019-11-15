@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, KeyboardAvoidingView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -38,9 +38,10 @@ export class RegisterScreen extends React.Component {
 
     render() {
         return(
-            <View>
+            <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding" enabled>
                 <CustomHeader navigation={ this.props.navigation } title="Register" />
-                <Input
+                <View style={styles.container}>
+                    <Input
                         onChangeText={ (username) => this.setState({username}) }
                         inputContainerStyle={styles.input}
                         placeholder='Nom de compte'
@@ -82,10 +83,11 @@ export class RegisterScreen extends React.Component {
                             <Icon name='lock' size={32} color='#2089DC' />
                         }
                     />
-                    <View style={styles.buttons}>
-                        <Button title="S'inscrire" onPress={this.handleSubmit} />
-                    </View>
-            </View>
+                </View>
+                <View style={styles.buttons}>
+                    <Button title="S'inscrire" onPress={this.handleSubmit} />
+                </View>
+            </KeyboardAvoidingView>
         )
     }
 }
@@ -104,10 +106,24 @@ export default connect(mapStateToProps, mapDispatchToProps)(RegisterScreen);
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginEnd: 35,
+        marginStart: 35,
+        borderWidth: 1,
+        borderColor: "#2089DC",
+
+    },
+    input: {
+        borderColor:'#2089DC',
+        marginTop: 20
+    },
+    buttons: {
+        padding: 10,
+        marginEnd: 35,
+        marginStart: 35,
+        marginBottom: 30
     },
   });
   
