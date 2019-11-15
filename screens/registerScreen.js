@@ -41,53 +41,52 @@ export class RegisterScreen extends React.Component {
             <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding" enabled>
                 <CustomHeader navigation={ this.props.navigation } title="Register" />
                 <View style={styles.container}>
-                        <Input
-                            onChangeText={ (username) => this.setState({username}) }
-                            inputContainerStyle={styles.input}
-                            placeholder='Nom de compte'
-                            rightIcon={
-                                <Icon name='user' size={32} color='#2089DC' />
-                            }
-                        />
-                        <Input
-                            onChangeText={ (email) => this.setState({email}) }
-                            inputContainerStyle={styles.input}
-                            placeholder='Adresse Mail'
-                            rightIcon={
-                                <Icon name='envelope' size={24} color='#2089DC' />
-                            }
-                        />
-                                            <Input
-                            onChangeText={ (phone) => this.setState({phone}) }
-                            inputContainerStyle={styles.input}
-                            placeholder='Numéro de téléphone'
-                            rightIcon={
-                                <Icon name='phone' size={24} color='#2089DC' />
-                            }
-                        />
-                        <Input
-                            onChangeText={ (password) => this.setState({password}) }
-                            inputContainerStyle={styles.input}
-                            placeholder='Mot de passe'
-                            secureTextEntry={true}
-                            rightIcon={
-                                <Icon name='lock' size={32} color='#2089DC' />
-                            }
-                        />
-                                            <Input
-                            onChangeText={ (cpassword) => this.setState({cpassword}) }
-                            inputContainerStyle={styles.input}
-                            placeholder='Confirmer le mot de passe'
-                            secureTextEntry={true}
-                            rightIcon={
-                                <Icon name='lock' size={32} color='#2089DC' />
-                            }
-                        />
-                        </View>
-                        <View style={styles.buttons}>
-                            <Button title="S'inscrire" onPress={this.handleSubmit} />
-                        </View>
-                    
+                    <Input
+                        onChangeText={ (username) => this.setState({username}) }
+                        inputContainerStyle={styles.input}
+                        placeholder='Nom de compte'
+                        rightIcon={
+                            <Icon name='user' size={32} color='#2089DC' />
+                        }
+                    />
+                    <Input
+                        onChangeText={ (email) => this.setState({email}) }
+                        inputContainerStyle={styles.input}
+                        placeholder='Adresse Mail'
+                        rightIcon={
+                            <Icon name='envelope' size={24} color='#2089DC' />
+                        }
+                    />
+                                        <Input
+                        onChangeText={ (phone) => this.setState({phone}) }
+                        inputContainerStyle={styles.input}
+                        placeholder='Numéro de téléphone'
+                        rightIcon={
+                            <Icon name='phone' size={24} color='#2089DC' />
+                        }
+                    />
+                    <Input
+                        onChangeText={ (password) => this.setState({password}) }
+                        inputContainerStyle={styles.input}
+                        placeholder='Mot de passe'
+                        secureTextEntry={true}
+                        rightIcon={
+                            <Icon name='lock' size={32} color='#2089DC' />
+                        }
+                    />
+                                        <Input
+                        onChangeText={ (cpassword) => this.setState({cpassword}) }
+                        inputContainerStyle={styles.input}
+                        placeholder='Confirmer le mot de passe'
+                        secureTextEntry={true}
+                        rightIcon={
+                            <Icon name='lock' size={32} color='#2089DC' />
+                        }
+                    />
+                </View>
+                <View style={styles.buttons}>
+                    <Button title="S'inscrire" onPress={this.handleSubmit} />
+                </View>
             </KeyboardAvoidingView>
         )
     }
@@ -111,7 +110,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginEnd: 35,
-        marginStart: 35
+        marginStart: 35,
+        borderWidth: 1,
+        borderColor: "#2089DC",
+
     },
     input: {
         borderColor:'#2089DC',
@@ -120,7 +122,8 @@ const styles = StyleSheet.create({
     buttons: {
         padding: 10,
         marginEnd: 35,
-        marginStart: 35
+        marginStart: 35,
+        marginBottom: 30
     },
   });
   
