@@ -1,5 +1,5 @@
 export const register = (username, email, phone, password, cpassword) => {
-    return fetch('http://10.13.20.89:8080/api/register', {
+    return fetch('http://10.13.21.1:8000/api/register', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
