@@ -12,8 +12,8 @@ import BottomNavigator from './bottomNavigator';
 
 const AuthStack = createStackNavigator(
     { 
-        register: RegisterScreen,
-        login: LoginScreen
+        login: LoginScreen,
+        register: RegisterScreen
     },
     {
         headerMode: 'none'

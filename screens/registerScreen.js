@@ -38,6 +38,7 @@ export class RegisterScreen extends React.Component {
 
     render() {
         return(
+            <View style={{ flex: 1 }}>
             <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding" enabled>
                 <CustomHeader navigation={ this.props.navigation } title="Register" />
                 <View style={styles.container}>
@@ -84,10 +85,12 @@ export class RegisterScreen extends React.Component {
                         }
                     />
                 </View>
-                <View style={styles.buttons}>
-                    <Button title="S'inscrire" onPress={this.handleSubmit} />
-                </View>
             </KeyboardAvoidingView>
+            <View style={styles.buttons}>
+                <Button title="S'inscrire" onPress={this.handleSubmit} />
+            </View>
+            </View>
+            
         )
     }
 }
@@ -111,8 +114,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginEnd: 35,
         marginStart: 35,
-        borderWidth: 1,
-        borderColor: "#2089DC",
+        /* borderWidth: 1,
+        borderColor: "#2089DC", */
 
     },
     input: {
