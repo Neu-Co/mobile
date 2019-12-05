@@ -32,7 +32,7 @@ export class LoginScreen extends React.Component {
 
     render() {
         return(
-            <KeyboardAvoidingView  style={{ flex: 1 }} behavior="padding" enabled>
+            <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding" enabled>
                 <CustomHeader navigation={ this.props.navigation } title="Login" />
                 <View style={styles.logoContainer}>
                     <Image
@@ -60,7 +60,7 @@ export class LoginScreen extends React.Component {
                     />
                     <View style={styles.buttons}>
                         <Button title="Login" onPress={this.handleSubmit} />
-                        <Button buttonStyle={styles.register} title="Register" />
+                        <Button buttonStyle={styles.register} title="Register" onPress={ () => this.props.navigation.navigate('register')} />
                     </View>
                 </View>
             </KeyboardAvoidingView>
