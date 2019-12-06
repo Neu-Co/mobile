@@ -5,13 +5,16 @@ import { createStackNavigator } from 'react-navigation-stack';
 import LoginScreen from '../screens/loginScreen';
 import LoadingScreen from '../screens/loadingScreen';
 import RegisterScreen from '../screens/registerScreen';
+import NewOfferScreen from '../screens/newOfferScreen';
 
 // Navigator
 import BottomNavigator from './bottomNavigator';
+import ProfileScreen from '../screens/profileScreen';
+import { HomeScreen } from '../screens/homeScreen';
 
 
 const AuthStack = createStackNavigator(
-    { 
+    {
         register: RegisterScreen,
         login: LoginScreen
     },
@@ -26,7 +29,7 @@ const SwitchNavigator = createSwitchNavigator(
         AuthLoading: LoadingScreen
     },
     {
-        initialRouteName: 'Auth'
+        initialRouteName: 'App'
     }
 )
 

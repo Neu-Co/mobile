@@ -7,12 +7,15 @@ import Ionicons from 'react-native-vector-icons/AntDesign';
 import HomeScreen from '../screens/homeScreen';
 import ProfileScreen from '../screens/profileScreen';
 import LoginScreen from '../screens/loginScreen';
+import NewOfferScreen from '../screens/newOfferScreen';
 
 const BottomNavigator = createBottomTabNavigator(
     {
-        Home: HomeScreen,
-        Profile: ProfileScreen,
-        Login: LoginScreen
+      NewOffer: NewOfferScreen,
+      Home: HomeScreen,
+      Profile: ProfileScreen,
+      Login: LoginScreen,
+        
     },
     {
         headerMode: 'screen',
@@ -36,7 +39,7 @@ const BottomNavigator = createBottomTabNavigator(
              
               } else if ( routeName === 'Login' ) {
                 iconHome = `API`;
-                iconLogin = `API`;
+                iconLProfile = `API`;
                 iconLogin = `API`;
               }
       
