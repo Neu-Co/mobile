@@ -12,10 +12,11 @@ export const getToken = () => async dispatch => {
     }
   };
 
-export const setToken = token => async dispatch => {
+export const setToken = userToken => async dispatch => {
   try {
-    await AsyncStorage.setItem('@token', JSON.stringify(token));
-    dispatch({ type: actionTypes.SET_TOKEN, token });
+    await AsyncStorage.setItem('@token', JSON.stringify(userToken));
+    console.log(userToken);
+    dispatch({ type: actionTypes.SET_TOKEN, userToken });
     return true;
   } catch (error) {
     console.log(error);

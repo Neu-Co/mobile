@@ -89,6 +89,67 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center',
         alignItems: 'center',
+    },
+    buttonContainer: {
+        marginTop: 10,
+        height: 45,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom:10,
+        width:250,
+        borderRadius:30,
+        backgroundColor: "#00839A",
+      },
+    header: {
+        backgroundColor: '#00839A',
+        height: 100
+    },
+    avatar: {
+        width: 130,
+        height: 130,
+        borderRadius: 70,
+        borderWidth: 4,
+        borderColor: "white",
+        marginBottom: 10,
+        alignSelf:'center',
+        position: 'absolute',
+        marginTop: 35
+    },
+    text: {
+        overflow: 'hidden',
+        fontWeight: 'bold'
+    },
+    body:{
+        flex: 1,
+        marginTop:40,
+    },
+    bodyContent: {
+        flex: 1,
+        alignItems: 'center',
+        padding:30,
+    },
+    name:{
+        fontSize:28,
+        color: "#696969",
+        fontWeight: "600",
+        marginStart: 5,
+        flexWrap: 'wrap'
+    },
+    info: {
+        fontSize:16,
+        color: "#00839A",
+        marginTop:10
+    },
+    separator: {
+        marginStart: 15,
+        marginEnd: 15,
+        marginTop: 15,
+        height: 5,
+        width: 200,
+        borderTopWidth: 2,
+        borderTopColor: '#d6d7da',
+        marginBottom: 15
     }
 });
 
