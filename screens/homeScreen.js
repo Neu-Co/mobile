@@ -26,7 +26,7 @@ export class HomeScreen extends React.Component {
     }
 
     render() {
-        console.log(this.props);
+        console.log(this.props.userToken);
         return(
             <View>
                 <CustomHeader navigation={ this.props.navigation } title="Home" />
@@ -49,7 +49,7 @@ export class HomeScreen extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        token: state.token
+        userToken: state.userToken
     }
   }
 

@@ -1,10 +1,8 @@
 import { AsyncStorage } from 'react-native';
-
 import * as actionTypes from './types';
-
 import {register} from '../services/user.service';
-
 import { setToken } from './token';
+import { getUserDetail } from '../services/user.service';
 
 export const setUser = (user) => async dispatch => {
   try {
@@ -37,11 +35,24 @@ export const getUser = () => async dispatch => {
 export const registerUser = (username, email, phone, password, cpassword) => async dispatch => {
   try {
     const response = await register(username, email, phone, password, cpassword);
-    console.log(response);
     const token = response.success ? response.success.token : false;
     await dispatch(setToken(token));
     if(!response.error && token ) return true;
   } catch (error) {
     console.log(error);
+  }
+}
+
+export const setUserDetails = (token) => async dispatch => {
+  try {
+    const response = await getUserDetail(token);
+    if(!response.error) {
+      await dispatch(setUser(response.user));
+      return response.user;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    console.log(error.message);
   }
 }

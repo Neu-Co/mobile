@@ -5,6 +5,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import LoginScreen from '../screens/loginScreen';
 import LoadingScreen from '../screens/loadingScreen';
 import RegisterScreen from '../screens/registerScreen';
+import profileScreen from '../screens/profileScreen';
 
 // Navigator
 import BottomNavigator from './bottomNavigator';

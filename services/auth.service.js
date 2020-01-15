@@ -1,6 +1,6 @@
 
 export const login = (username, password) => {
-    return fetch('http://10.13.20.89:8080/api/login', {
+    return fetch('http://192.168.1.104/api/login', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -11,8 +11,12 @@ export const login = (username, password) => {
                 password: password,
             })
     })
-    .then( res => res.json() )
+    .then( res => handleResponse(res) )
     .catch(err => {
         console.log(err.message);
     })
+}
+
+const handleResponse = (res) => {
+    return res.json();
 }

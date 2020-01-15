@@ -26,7 +26,8 @@ export default class CustomHeader extends React.Component {
     render() {
         nav = this.props.navigation;
         return(
-            <Header 
+            <Header
+                containerStyle={{ marginBottom: 0, paddingBottom: 0, borderBottomWidth: 0}} 
                 centerComponent = { <MenuTitle title = { this.props.title } /> }
                 //rightComponent = { <MenuButton navigation={ nav } /> }
             />
