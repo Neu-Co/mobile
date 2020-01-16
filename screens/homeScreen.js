@@ -26,6 +26,7 @@ export class HomeScreen extends React.Component {
     }
 
     render() {
+        console.log(this.props.user);
         return(
             <View>
                 <CustomHeader navigation={ this.props.navigation } title="Home" />
