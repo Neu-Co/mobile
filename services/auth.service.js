@@ -1,6 +1,7 @@
+import config from './config.service';
 
 export const login = (username, password) => {
-    return fetch('http://192.168.1.104/api/login', {
+    return fetch(`${config.API_URL}/api/login`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

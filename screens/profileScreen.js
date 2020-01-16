@@ -20,6 +20,7 @@ class ProfileScreen extends React.Component {
 
   componentDidMount = async() => {
     const user = await this.props.setUserDetails(this.props.userToken.userToken);
+    console.log(user);
     this.setState({
       user: user,
       isLoading: false

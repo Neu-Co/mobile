@@ -1,5 +1,7 @@
+import config from './config.service';
+
 export const register = (username, email, phone, password, cpassword) => {
-    return fetch('http://192.168.1.104/api/register', {
+    return fetch(`${config.API_URL}/api/register`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -20,7 +22,7 @@ export const register = (username, email, phone, password, cpassword) => {
 }
 
 export const getUserDetail = (token) => {
-    return fetch('http://192.168.1.104/api/details', {
+    return fetch(`${config.API_URL}/api/details`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
