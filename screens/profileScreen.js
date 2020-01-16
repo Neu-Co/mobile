@@ -20,7 +20,6 @@ class ProfileScreen extends React.Component {
 
   componentDidMount = async() => {
     const user = await this.props.setUserDetails(this.props.userToken.userToken);
-    console.log(user);
     this.setState({
       user: user,
       isLoading: false
@@ -91,7 +90,7 @@ class ProfileScreen extends React.Component {
                     <Icon style={styles.icon} type='material' active name="star" />
                     <Text style={styles.icon}>Reviews</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.action} >
+                <TouchableOpacity style={styles.action} onPress={ () => this.props.navigation.navigate('myTrips')}>
                     <Icon style={styles.icon} type='material' active name="send" />
                     <Text style={styles.icon}>Mes annonces</Text>
                 </TouchableOpacity>
