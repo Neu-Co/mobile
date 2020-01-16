@@ -3,7 +3,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 // Screens
 import LoginScreen from '../screens/loginScreen';
-import LoadingScreen from '../screens/loadingScreen';
+import AuthLoadingScreen from '../screens/AuthLoadingScreen';
 import RegisterScreen from '../screens/registerScreen';
 import profileScreen from '../screens/profileScreen';
 
@@ -24,10 +24,10 @@ const SwitchNavigator = createSwitchNavigator(
     {
         Auth: AuthStack,
         App: BottomNavigator,
-        AuthLoading: LoadingScreen
+        AuthLoading: AuthLoadingScreen
     },
     {
-        initialRouteName: 'Auth'
+        initialRouteName: 'AuthLoading'
     }
 )
 

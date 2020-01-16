@@ -6,7 +6,7 @@ export const getToken = () => async dispatch => {
     try {
       const token = JSON.parse(await AsyncStorage.getItem(`@token`));
       dispatch({ type: actionTypes.GET_TOKEN, token });
-      return true;
+      if(token) return true;
     } catch (error) {
       console.log(error);
     }

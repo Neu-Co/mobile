@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image, ActivityIndicator } from "react-native";
-import { Icon, Button, Sp } from "react-native-elements";
+import { Icon, Button } from "react-native-elements";
 import Stars from "react-native-stars";
 import { FontAwesome } from "react-native-vector-icons";
 import { connect } from 'react-redux';
