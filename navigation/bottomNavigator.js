@@ -7,12 +7,14 @@ import Ionicons from 'react-native-vector-icons/AntDesign';
 import HomeScreen from '../screens/homeScreen';
 import ProfileScreen from '../screens/profileScreen';
 import LoginScreen from '../screens/loginScreen';
+import TripScreen from '../screens/tripScreen'
 
 const BottomNavigator = createBottomTabNavigator(
     {
         Home: HomeScreen,
         Profile: ProfileScreen,
-        Login: LoginScreen
+        Login: LoginScreen,
+        myTrips: TripScreen
     },
     {
         headerMode: 'screen',
