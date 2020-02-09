@@ -1,3 +1,3 @@
 export default config = {
-    API_URL: 'http://192.168.1.104'
+    API_URL: 'http://192.168.137.1:8000'
 }
