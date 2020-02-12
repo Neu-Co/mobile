@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, Modal, View } from 'react-native';
-import { Header, Text, Icon, Input } from 'react-native-elements';
+import { Text, Icon } from 'react-native-elements';
 import Autocomplete from 'react-native-autocomplete-input';
+import InputCity from '../components/inputCity';
 import data from '../data/cities.json';
 
 export default class ModalFilter extends React.Component {
@@ -47,25 +48,8 @@ export default class ModalFilter extends React.Component {
                             </TouchableOpacity>
                         </View>
                         <View style={styles.modalBody}>
-                            <Autocomplete
-                                autoCapitalize="none"
-                                autoCorrect={false}
-                                defaultValue={query}
-                                keyExtractor={(item, index) => index.toString()}
-                                containerStyle={styles.autocompleteContainer}
-                                data={cities.length === 1 && comp(query, cities[0].name) ? [] : cities}
-                                onChangeText={text => this.setState({ query: text })}
-                                placeholder="Départ"
-                                inputContainerStyle={styles.searchInput}
-                                listStyle={{ borderWidth: 0 }}
-                                renderItem={({ item }) => (
-                                    <TouchableOpacity style={styles.itemCity} onPress={() => this.setState({ query: item.name })}>
-                                        <Text style={styles.itemText}>
-                                            {item.name}
-                                        </Text>
-                                    </TouchableOpacity>
-                                )}
-                            />
+                            <InputCity placeholder="Départ" containerStyle={styles.autocompleteTop} />
+                            <InputCity placeholder="Arrivée" containerStyle={styles.autocompleteBottom} />
                         </View>
                     </View>
                 </View>
@@ -105,7 +89,7 @@ const styles = StyleSheet.create({
     searchInput: {
         borderWidth: 0,
     },
-    autocompleteContainer: {
+    autocompleteTop: {
         flex: 1,
         left: 0,
         position: 'absolute',
@@ -115,6 +99,20 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderTopStartRadius: 10,
         borderTopEndRadius: 10,
+        borderColor: '#2089dc',
+        padding: 3,
+        backgroundColor: '#FFFFFF'
+    },
+    autocompleteBottom: {
+        flex: 1,
+        left: 0,
+        position: 'absolute',
+        right: 0,
+        top: 60,
+        zIndex: 1,
+        borderWidth: 1,
+        borderBottomStartRadius: 10,
+        borderBottomEndRadius: 10,
         borderColor: '#2089dc',
         padding: 3
     },

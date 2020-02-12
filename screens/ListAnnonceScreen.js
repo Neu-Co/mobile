@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, FlatList, RefreshControl, View, ActivityIndicator, Text, TouchableOpacity } from 'react-native'
-import { Icon, Input } from 'react-native-elements';
+import { StyleSheet, FlatList, RefreshControl, View, ActivityIndicator, Text, TouchableOpacity } from 'react-native';
+import { Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 import CustomHeader from "../components/header";
 import { setUserDetails } from '../actions/user';
 import ModalFilter from "../components/modalFilter";
-import data from '../data/trips.json';
+import { getAllTrip } from "../services/trip.service";
 
 class ListAnnonceScreen extends React.Component {
 
@@ -13,12 +13,18 @@ class ListAnnonceScreen extends React.Component {
         super(props);
         this.state = {
             trips: data,
-            isLoading: false,
+            isLoading: true,
             isVisible: false
         }
     }
 
     componentDidMount = async() => {
+        const { userToken } = this.props;
+        const data = await getAllTrip(userToken.userToken);
+        this.setState({
+            isLoading: false,
+            trips: data.trips
+        })
     }
 
     handleOnPress = async(item) => {
@@ -179,8 +185,8 @@ const TripComponent = ({trip}) => (
                 <Icon type='font-awesome' name='car' color='#2089DC' />
             </View>
             <View style={{ flex: 1, justifyContent: 'center' }}>
-                <Text numberOfLines={2}>Date de création: { trip.date } </Text>
-                <Text style={{ fontSize: 12 }}> id: { trip.id } </Text>
+                <Text numberOfLines={2}>{trip.departure_name} => {trip.arrival_name}</Text>
+                <Text style={{ fontSize: 12 }}> {trip.date} </Text>
             </View>
             <View style={styles.tripIcon}>
                 <Icon type='font-awesome' name='chevron-right' color='#2089DC' />
