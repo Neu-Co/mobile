@@ -19,20 +19,8 @@ export default class ModalFilter extends React.Component {
         this.props.onClose(false);
     }
 
-    findCity = (query) => {
-        if (query === '') {
-          return [];
-        }
-        const { cities } = this.state;
-        const regex = new RegExp(`${query.trim()}`, 'i');
-        return cities.filter(city => city.name.search(regex) >= 0);
-    }
-
     render() {
         const { isVisible } = this.props;
-        const { query } = this.state;
-        const cities = this.findCity(query);
-        const comp = (a, b) => a.toLowerCase().trim() === b.toLowerCase().trim();
         return(
             <Modal
                 animationType="fade"

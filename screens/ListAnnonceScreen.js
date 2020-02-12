@@ -12,7 +12,7 @@ class ListAnnonceScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            trips: data,
+            trips: [],
             isLoading: true,
             isVisible: false
         }
@@ -31,6 +31,9 @@ class ListAnnonceScreen extends React.Component {
     }
 
     onRefresh = () => {
+    }
+
+    onValidate = () => {
     }
 
     setModalVisible = (visible) => {
@@ -102,6 +105,7 @@ class ListAnnonceScreen extends React.Component {
                 <ModalFilter 
                     isVisible={isVisible}
                     onClose={this.setModalVisible}
+                    //onValidate={}
                 />
             </View>
         );

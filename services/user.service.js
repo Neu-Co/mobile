@@ -22,7 +22,7 @@ export const register = (username, email, phone, password, cpassword) => {
 }
 
 export const getUserDetail = (token) => {
-    return fetch(`${config.API_URL}/api/details`, {
+    return fetch(`${config.API_URL}/api/user/my-profile`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
