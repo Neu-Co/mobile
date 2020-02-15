@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, Modal, View } from 'react-native';
 import { Text, Icon } from 'react-native-elements';
-import Autocomplete from 'react-native-autocomplete-input';
 import InputCity from '../components/inputCity';
 import data from '../data/cities.json';
 
