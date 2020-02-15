@@ -67,7 +67,7 @@ class ListAnnonceScreen extends React.Component {
                     type='Feather'
                     color={'#00839A'}
                 />
-                <Text>Aucuns voyages</Text>
+                <Text>Aucunes Annonces</Text>
             </View>
         );
     }
