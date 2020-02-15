@@ -25,7 +25,7 @@ export const setToken = userToken => async dispatch => {
 
 export const removeToken = () => async dispatch => {
   try {
-    await AsyncStorage.removeItem('userToken');
+    await AsyncStorage.removeItem('@token');
     dispatch({ type: actionTypes.DEL_TOKEN });
     return true;
   } catch (error) {

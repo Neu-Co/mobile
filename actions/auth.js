@@ -1,5 +1,5 @@
 import { login } from '../services/auth.service';
-import { setToken } from './token';
+import { setToken, removeToken } from './token';
 
 export const loginUser = (username, password) => async dispatch => {
     try {
@@ -14,7 +14,9 @@ export const loginUser = (username, password) => async dispatch => {
 
 export const logoutUser = () => async dispatch => {
     try {
-
+        const res = await removeToken();
+        if (res) return true
+        else return false 
     } catch (error) {
         console.log(error);
     }
