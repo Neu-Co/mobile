@@ -1,3 +1,3 @@
 export default config = {
-    API_URL: 'http://192.168.137.1:8000'
+    API_URL: 'http://ec2-54-146-190-154.compute-1.amazonaws.com'
 }
