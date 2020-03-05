@@ -6,13 +6,13 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 // SCREENS
 import HomeScreen from '../screens/homeScreen';
 import ProfileScreen from '../screens/profileScreen';
-import ListAnnonceScreen from '../screens/ListAnnonceScreen';
+import AnnonceStack from './annonceStackNavigator';
 
 const BottomNavigator = createBottomTabNavigator(
     {
         Home: HomeScreen,
         Profile: ProfileScreen,
-        Annonces: ListAnnonceScreen
+        Annonces: AnnonceStack,
     },
     {
         headerMode: 'screen',
