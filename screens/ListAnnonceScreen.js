@@ -28,6 +28,9 @@ class ListAnnonceScreen extends React.Component {
     }
 
     handleOnPress = async(item) => {
+        this.props.navigation.navigate('Annonce', {
+            trip: item
+        })
     }
 
     onRefresh = () => {

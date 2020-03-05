@@ -10,12 +10,13 @@ class AnnonceScreen extends React.Component {
     super(props);
     this.state = {
       isLoading: true,
+      trip: this.props.navigation.state.params.trip,
       user: {}
     };
   }
 
   componentDidMount = async() => {
-    // fetch api here
+    //fetch api here
   }
 
   // render the view
