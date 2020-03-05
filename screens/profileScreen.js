@@ -5,6 +5,7 @@ import Stars from "react-native-stars";
 import { FontAwesome } from "react-native-vector-icons";
 import { connect } from 'react-redux';
 import { setUserDetails } from '../actions/user';
+import { logoutUser } from '../actions/auth';
 import CustomHeader from "../components/header";
 
 
@@ -24,6 +25,11 @@ class ProfileScreen extends React.Component {
       user: user,
       isLoading: false
     })
+  }
+
+  handleLogout = async() => {
+    const logout = await this.props.logoutUser();
+    if(logout) this.props.navigation.navigate('Auth');
   }
 
   render() {
@@ -90,7 +96,7 @@ class ProfileScreen extends React.Component {
                     <Icon style={styles.icon} type='material' active name="star" />
                     <Text style={styles.icon}>Reviews</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.action} onPress={ () => this.props.navigation.navigate('myTrips')}>
+                <TouchableOpacity style={styles.action} onPress={ () => this.props.navigation.navigate('MyTrips')}>
                     <Icon style={styles.icon} type='material' active name="send" />
                     <Text style={styles.icon}>Mes annonces</Text>
                 </TouchableOpacity>
@@ -110,10 +116,10 @@ class ProfileScreen extends React.Component {
                       />
                     }
                     title="Déconnexion"
-                    buttonStyle={{ backgroundColor: 'red' }}
+                    buttonStyle={{ backgroundColor: '#DC3545' }}
                     containerStyle={{ marginStart: 30, marginEnd: 30, marginBottom: 30 }}
+                    onPress={this.handleLogout}
                   />
-              
             </View>
           )}
       </View>
@@ -129,6 +135,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   setUserDetails: (...args) => dispatch(setUserDetails(...args)),
+  logoutUser: (...args) => dispatch(logoutUser(...args))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);
