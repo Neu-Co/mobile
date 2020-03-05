@@ -5,6 +5,7 @@ import Stars from "react-native-stars";
 import { FontAwesome } from "react-native-vector-icons";
 import { connect } from 'react-redux';
 import { setUserDetails } from '../actions/user';
+import { logoutUser } from '../actions/auth';
 import CustomHeader from "../components/header";
 
 
@@ -24,6 +25,11 @@ class ProfileScreen extends React.Component {
       user: user,
       isLoading: false
     })
+  }
+
+  handleLogout = async() => {
+    const logout = await this.props.logoutUser();
+    if(logout) this.props.navigation.navigate('Auth');
   }
 
   render() {
@@ -112,6 +118,7 @@ class ProfileScreen extends React.Component {
                     title="Déconnexion"
                     buttonStyle={{ backgroundColor: '#DC3545' }}
                     containerStyle={{ marginStart: 30, marginEnd: 30, marginBottom: 30 }}
+                    onPress={this.handleLogout}
                   />
             </View>
           )}
@@ -128,6 +135,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   setUserDetails: (...args) => dispatch(setUserDetails(...args)),
+  logoutUser: (...args) => dispatch(logoutUser(...args))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);

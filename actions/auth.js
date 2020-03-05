@@ -14,7 +14,7 @@ export const loginUser = (username, password) => async dispatch => {
 
 export const logoutUser = () => async dispatch => {
     try {
-        const res = await removeToken();
+        const res = await dispatch(removeToken());
         if (res) return true
         else return false 
     } catch (error) {
