@@ -90,7 +90,7 @@ class ProfileScreen extends React.Component {
                     <Icon style={styles.icon} type='material' active name="star" />
                     <Text style={styles.icon}>Reviews</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.action} onPress={ () => this.props.navigation.navigate('myTrips')}>
+                <TouchableOpacity style={styles.action} onPress={ () => this.props.navigation.navigate('MyTrips')}>
                     <Icon style={styles.icon} type='material' active name="send" />
                     <Text style={styles.icon}>Mes annonces</Text>
                 </TouchableOpacity>
@@ -110,10 +110,9 @@ class ProfileScreen extends React.Component {
                       />
                     }
                     title="Déconnexion"
-                    buttonStyle={{ backgroundColor: 'red' }}
+                    buttonStyle={{ backgroundColor: '#DC3545' }}
                     containerStyle={{ marginStart: 30, marginEnd: 30, marginBottom: 30 }}
                   />
-              
             </View>
           )}
       </View>
