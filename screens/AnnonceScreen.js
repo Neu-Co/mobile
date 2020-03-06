@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { Icon, Button } from "react-native-elements";
+import { Text, Icon, Button } from "react-native-elements";
 import { connect } from 'react-redux';
 import CustomHeader from "../components/header";
 
@@ -15,18 +15,36 @@ class AnnonceScreen extends React.Component {
     };
   }
 
+  details(){
+
+  }
+
   componentDidMount = async() => {
     //fetch api here
   }
 
   // render the view
   render() {
-    const { isLoading, user } = this.state;
+    
+    const { isLoading, user, trip } = this.state;
     return (
       <View style={styles.myStyle}>
           <CustomHeader navigation={this.props.navigation} title="Annonce" />
+          <View style={styles.blockDetail}>
+            <Text h3>{trip.arrival_name}</Text>
+          </View>
 
-            {/* Reste de la vue ici */}
+          <View style={styles.blockDetail}>
+            <Text h3>{trip.car_model}</Text>
+          </View>
+
+          <View style={styles.blockDetail}>
+            <Text h3 >{trip.date}</Text>
+          </View>
+
+          <View style={styles.blockDetail}>
+            <Text h3>{trip.departure_name}</Text>
+          </View>
 
       </View>
     );
@@ -48,5 +66,19 @@ export default connect(mapStateToProps)(AnnonceScreen);
 const styles = StyleSheet.create({
   myStyle: {
     flex: 1
+  },
+  blockDetail: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderStyle: "solid",
+    borderWidth: 1,
+    borderColor: "blue",
+    borderRadius: 2,
+    marginBottom: 50,
+    color: 'blue',
+    width: 200, 
+    height: 50, 
+    backgroundColor: 'powderblue'
   }
-});
+},
+);
