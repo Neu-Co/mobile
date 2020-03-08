@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, Modal, View } from 'react-native';
-import { Header, Text, Icon, Input } from 'react-native-elements';
+import { Header, Text, Input } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/Entypo';
 import Autocomplete from 'react-native-autocomplete-input';
 import data from '../data/cities.json';
 
@@ -10,7 +11,9 @@ export default class InputCity extends React.Component {
         super(props);
         this.state = {
             cities: data,
-            query: ''
+            city: '',
+            query: '',
+            found: true
         }
     }
 
@@ -18,40 +21,43 @@ export default class InputCity extends React.Component {
         this.props.onClose(false);
     }
 
+    remove
+
     findCity = (query) => {
         if (query === '') {
           return [];
         }
         const { cities } = this.state;
-        const regex = new RegExp(`${query.trim()}`, 'i');
-        return cities.filter(city => city.name.search(regex) >= 0);
+        
+        query.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+        if(cities.filter(city => city.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") === query.toLowerCase().trim() ).length > 0 ) {
+            console.log('ok');
+        }
+
+        //return (cities.filter(city => city.name.search(regex) >= 0).length > 0);
+
     }
 
     render() {
         const { query } = this.state;
         const cities = this.findCity(query);
         const comp = (a, b) => a.toLowerCase().trim() === b.toLowerCase().trim();
-        const { containerStyle, placeholder } = this.props;
+        const { containerStyle, placeholder, iconName } = this.props;
         return(
-            <Autocomplete
-                autoCapitalize="none"
-                autoCorrect={false}
-                defaultValue={query}
-                keyExtractor={(item, index) => index.toString()}
-                containerStyle={containerStyle}
-                data={cities.length === 1 && comp(query, cities[0].name) ? [] : cities}
-                onChangeText={text => this.setState({ query: text })}
+            <Input
+                onChangeText={this.findCity}
+                inputStyle={styles.searchInput} 
                 placeholder={placeholder}
-                inputContainerStyle={styles.searchInput}
-                listContainerStyle={{ flex: 1 }}
-                listStyle={{ borderWidth: 0, padding: 0, margin: 0 }}
-                renderItem={({ item }) => (
-                    <TouchableOpacity style={styles.itemCity} onPress={() => this.setState({ query: item.name })}>
-                        <Text style={styles.itemText}>
-                            {item.name}
-                        </Text>
-                    </TouchableOpacity>
-                )}
+                inputContainerStyle={styles.containerInput}
+                leftIconContainerStyle={{marginLeft: 0}}
+                leftIcon={
+                    <Icon 
+                        name={iconName}
+                        size={24}
+                        color='#2089DC'
+                    />
+                }
             />
         )
     }
@@ -60,6 +66,9 @@ export default class InputCity extends React.Component {
 const styles = StyleSheet.create({
     searchInput: {
         borderWidth: 0,
+        marginTop: 10,
+        marginBottom: 10,
+        paddingLeft: 10
     },
     itemText: {
         fontSize: 15,
@@ -72,5 +81,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingStart: 10,
         zIndex: 2
+    },
+    containerInput: {
+        justifyContent: 'space-between',
+        borderColor:'#2089DC',
+        paddingLeft: 0
     }
   });

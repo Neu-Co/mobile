@@ -35,8 +35,8 @@ export default class ModalFilter extends React.Component {
                             </TouchableOpacity>
                         </View>
                         <View style={styles.modalBody}>
-                            <InputCity placeholder="Départ" containerStyle={styles.autocompleteTop} />
-                            <InputCity placeholder="Arrivée" containerStyle={styles.autocompleteBottom} />
+                            <InputCity placeholder="Départ" iconName='aircraft-take-off'  />
+                            <InputCity placeholder="Arrivée" iconName='aircraft-landing' />
                         </View>
                     </View>
                 </View>
